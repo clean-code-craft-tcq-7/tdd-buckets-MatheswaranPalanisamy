@@ -2,7 +2,7 @@
 #include <string.h>
 #include <assert.h>
 
-#include "chargeCurrentMonitor.h"
+#include "chargeCurrentmonitor.h"
 
 int main()
 {
