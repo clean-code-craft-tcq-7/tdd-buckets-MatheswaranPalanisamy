@@ -8,5 +8,9 @@ int main()
 {
     int currentSamples[] = {4,5};
     testCurrentMonitor(currentSamples, 2, "Range, Readings\n4-5, 2\n", 23);
+
+    int currentSamples2[] = {5,4};
+    testCurrentMonitor(currentSamples2, 2, "Range, Readings\n4-5, 2\n", 23);
+
     return 0;
 }
