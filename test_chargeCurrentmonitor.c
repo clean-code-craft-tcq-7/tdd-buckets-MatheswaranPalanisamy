@@ -10,6 +10,6 @@ void testCurrentMonitor(int chrgeCurrentArray[], int size, char *expectedString,
     int output_size = 0;
     memset(ccm_pair_output, 0, 100);
     output_size = findCurrentPairs(chrgeCurrentArray, size, ccm_pair_output);
-    assert(strcmp(ccm_pair_output, expectedString));
+    assert(strcmp(ccm_pair_output, expectedString) == 0);
     assert(output_size == charLength);
 }
