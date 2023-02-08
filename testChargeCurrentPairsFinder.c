@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
 
-#include "chargeCurrentmonitor.h"
+#include "chargeCurrentPairsFinder.h"
 
 void testCurrentPairOutput(int *chrgeCurrentArray, int inputSize, chargeCurrentPair *pairBuffer, int outputSize)
 {

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "testChargeCurrentMonitor.h"
+#include "testchargeCurrentPairsFinder.h"
 
 int main()
 {

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "chargeCurrentmonitor.h"
+#include "chargeCurrentPairsFinder.h"
 
 int ascendingComparator(const void * a, const void * b) 
 {
