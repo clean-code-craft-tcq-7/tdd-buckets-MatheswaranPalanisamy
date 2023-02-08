@@ -1,5 +1,12 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 #include "chargeCurrentmonitor.h"
+
+int ascendingComparator(const void * a, const void * b) 
+{
+   return ( *(int*)a - *(int*)b );
+}
 
 static int validateCurrentSampleArray(int *chrgeCurrentArray, int size)
 {
@@ -62,8 +69,9 @@ int findCurrentPairs(int *chrgeCurrentArray, int size, chargeCurrentPair *pairBu
 
     if(validateCurrentSampleArray(chrgeCurrentArray, size))
     {
+        qsort(chrgeCurrentArray, size, sizeof(int), ascendingComparator);
         pairCount = getValidCurrentPairs(chrgeCurrentArray, size, pairBuffer);
-    }    
+    }
 
     return pairCount;
 }
