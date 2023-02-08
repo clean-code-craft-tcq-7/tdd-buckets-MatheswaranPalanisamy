@@ -38,14 +38,14 @@
 
     The method can take an array of values as input in the single set of continuous order with unsorted manner with repeated numbers and shall return the list of continuous range, number of readings in the respective range and generate output in csv format.
         a) method shall return count as 0 and [] in pairBuffer if [3, 3] is passed as input
-        a) method shall return count as 1 and [[2, 3, 4]] in pairBuffer if [3, 2, 2, 3] is passed as input.
-        b) method shall return count as 1 and [[4, 8, 7]] in pairBuffer if [6, 4, 6, 7, 8, 5, 8] is passed as input.
-        c) method shall return count as 3 and [[2, 3, 3], [7, 9, 7], [11, 12, 2]] in pairBuffer if [7, 8, 3, 12, 2, 9, 11, 2, 7, 9, 7, 9] is passed as input.
+        b) method shall return count as 1 and [[2, 3, 4]] in pairBuffer if [3, 2, 2, 3] is passed as input.
+        c) method shall return count as 1 and [[4, 8, 7]] in pairBuffer if [6, 4, 6, 7, 8, 5, 8] is passed as input.
+        d) method shall return count as 3 and [[2, 3, 3], [7, 9, 7], [11, 12, 2]] in pairBuffer if [7, 8, 3, 12, 2, 9, 11, 2, 7, 9, 7, 9] is passed as input.
 
 #### Step 6: Generate output in csv format for passed array
     Note: Refactoring is required in method int findCurrentPairs(int *chrgeCurrentArray, int size, char *pairBuffer)
 	
 	The method an array of values, find best possible ranges and number of readings and shall return the csv formatted string.
-        a) method will return "Range, Readings\n4-5, 2", if [4, 5] is passed as input.
-        b) method will return "Range, Readings\n4-5, 2\n7-8, 2", if [4, 5, 7, 8] is passed as input.
-        d) method shall return "Range, Readings\n3-11, 8\n11-13, 2" if [6, 3, 4, 5, 7, 9, 8, 11] is passed as input.
+        a) method will return "Range, Readings\n4-5, 2\n", if [4, 5] is passed as input.
+        b) method will return "Range, Readings\n4-5, 2\n7-8, 2\n", if [4, 5, 7, 8] is passed as input.
+        d) method shall return "Range, Readings\n3-11, 8\n11-13, 2\n" if [6, 3, 4, 5, 7, 9, 8, 11] is passed as input.
