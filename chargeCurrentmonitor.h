@@ -1,3 +1,4 @@
+#define MAX_CURRENT_PAIRS_SUPPORTED     100
 typedef struct
 {
     int lower_limit;
