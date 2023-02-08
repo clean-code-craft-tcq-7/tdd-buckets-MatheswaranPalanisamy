@@ -8,8 +8,10 @@ int main()
     // Test case for Step 1
     chargeCurrentPair outputArray[20];
     assert(findCurrentPairs(NULL, 5, outputArray) == 0);
+
     int currentPairArray1[1];
     assert(findCurrentPairs(currentPairArray1, 0, outputArray) == 0);
+
     int currentPairArray2[1] = {3};
     assert(findCurrentPairs(currentPairArray2, 1, outputArray) == 0);
 
@@ -69,6 +71,28 @@ int main()
     assert(outputArray[1].lower_limit == 7);
     assert(outputArray[1].upper_limit == 9);
     assert(outputArray[1].count == 3);
+    assert(outputArray[2].lower_limit == 11);
+    assert(outputArray[2].upper_limit == 12);
+    assert(outputArray[2].count == 2);
+
+    // Test case for Step 5
+    int currentPairArray10[2] = {3, 3};
+    assert(findCurrentPairs(currentPairArray10, 2, outputArray) == 0);
+    
+    int currentPairArray11[4] = {3, 2, 2, 3};
+    assert(findCurrentPairs(currentPairArray11, 4, outputArray) == 1);
+    assert(outputArray[0].lower_limit == 2);
+    assert(outputArray[0].upper_limit == 3);
+    assert(outputArray[0].count == 4);
+
+    int currentPairArray12[12] = {7, 8, 3, 12, 2, 9, 11, 2, 7, 9, 7, 9};
+    assert(findCurrentPairs(currentPairArray12, 12, outputArray) == 3);
+    assert(outputArray[0].lower_limit == 2);
+    assert(outputArray[0].upper_limit == 3);
+    assert(outputArray[0].count == 3);
+    assert(outputArray[1].lower_limit == 7);
+    assert(outputArray[1].upper_limit == 9);
+    assert(outputArray[1].count == 7);
     assert(outputArray[2].lower_limit == 11);
     assert(outputArray[2].upper_limit == 12);
     assert(outputArray[2].count == 2);
