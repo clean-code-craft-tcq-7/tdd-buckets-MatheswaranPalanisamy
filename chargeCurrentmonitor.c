@@ -23,11 +23,20 @@ static int validateCurrentSampleArray(int *chrgeCurrentArray, int size)
     return 1;
 }
 
+static int validateCurrentPair(int index, int firstElement, int lastElement)
+{
+    if(firstElement == lastElement)
+    {
+        return 0;
+    }
+
+    return index;
+}
+
 static int identifyCurrentPair(int *chrgeCurrentArray, int size)
 {
     int index = 0;
-    int firstElement = chrgeCurrentArray[0];
-    int lastElement = chrgeCurrentArray[0];
+
     for(;index < size - 1; index++)
     {
         if((chrgeCurrentArray[index + 1] - chrgeCurrentArray[index]) > 1)
@@ -36,14 +45,7 @@ static int identifyCurrentPair(int *chrgeCurrentArray, int size)
         }
     }
 
-    lastElement = chrgeCurrentArray[index];
-
-    if(firstElement == lastElement)
-    {
-        return 0;
-    }
-
-    return index;
+    return validateCurrentPair(index, chrgeCurrentArray[0], chrgeCurrentArray[index]);
 }
 
 static int getValidCurrentPairs(int *chrgeCurrentArray, int size, chargeCurrentPair *pairBuffer)
