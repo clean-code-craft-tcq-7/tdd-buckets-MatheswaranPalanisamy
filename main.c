@@ -26,5 +26,27 @@ int main()
     assert(outputArray[0].upper_limit == 9);
     assert(outputArray[0].count == 6);
 
+    // Test case for Step 3
+    int currentPairArray5[7] = {1, 2, 3, 7, 8, 9, 10};
+    assert(findCurrentPairs(currentPairArray5, 7, outputArray) == 2);
+    assert(outputArray[0].lower_limit == 1);
+    assert(outputArray[0].upper_limit == 3);
+    assert(outputArray[0].count == 3);
+    assert(outputArray[1].lower_limit == 7);
+    assert(outputArray[1].upper_limit == 10);
+    assert(outputArray[1].count == 4);
+
+    int currentPairArray6[8] = {1, 2, 3, 7, 8, 9, 11, 12};
+    assert(findCurrentPairs(currentPairArray6, 8, outputArray) == 3);
+    assert(outputArray[0].lower_limit == 1);
+    assert(outputArray[0].upper_limit == 3);
+    assert(outputArray[0].count == 3);
+    assert(outputArray[1].lower_limit == 7);
+    assert(outputArray[1].upper_limit == 9);
+    assert(outputArray[1].count == 3);
+    assert(outputArray[2].lower_limit == 11);
+    assert(outputArray[2].upper_limit == 12);
+    assert(outputArray[2].count == 2);
+
     return 0;
 }
