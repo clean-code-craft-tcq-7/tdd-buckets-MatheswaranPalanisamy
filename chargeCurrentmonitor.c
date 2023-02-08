@@ -1,15 +1,28 @@
 #include <stdio.h>
-#include "valuePairs.h"
-#include "formatPairs.h"
-
 #include "chargeCurrentmonitor.h"
 
-int findCurrentPairs(int *chrgeCurrentArray, int size, char *pairBuffer)
+static int validateCurrentSampleArray(int *chrgeCurrentArray, int size)
 {
-    valuePair valuePairs = findValuePair(chrgeCurrentArray, size);
-    valuePairs.pair_count = findPairCount(chrgeCurrentArray, size, valuePairs);
+    if(size < 2)
+    {
+        return 0;
+    }
 
-    int charCount = getFormattedPairs(valuePairs, pairBuffer);
+    if(chrgeCurrentArray == NULL)
+    {
+        return 0;
+    }
 
-    return charCount;
+    return 1;
+}
+
+int findCurrentPairs(int *chrgeCurrentArray, int size, chargeCurrentPair *pairBuffer)
+{
+    int pairCount = 0;
+    if(validateCurrentSampleArray(chrgeCurrentArray, size))
+    {
+        // Proceed with the current pair identification
+    }
+
+    return pairCount;
 }

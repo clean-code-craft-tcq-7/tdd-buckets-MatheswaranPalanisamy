@@ -1,3 +1,10 @@
-#define MAX_CURRENT_VALUE_PAIRS_SUPPORTED       20
+typedef struct
+{
+    int lower_limit;
+    int upper_limit;
+    int count;
 
-int findCurrentPairs(int *chrgeCurrentArray, int size, char *pairBuffer);
+}chargeCurrentPair;
+
+
+int findCurrentPairs(int *chrgeCurrentArray, int size, chargeCurrentPair *pairBuffer);
