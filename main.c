@@ -48,5 +48,30 @@ int main()
     assert(outputArray[2].upper_limit == 12);
     assert(outputArray[2].count == 2);
 
+    // Test case for Step 4
+    int currentPairArray7[2] = {3, 2};
+    assert(findCurrentPairs(currentPairArray7, 2, outputArray) == 1);
+    assert(outputArray[0].lower_limit == 2);
+    assert(outputArray[0].upper_limit == 3);
+    assert(outputArray[0].count == 2);
+
+    int currentPairArray8[5] = {6, 4, 7, 8, 5};
+    assert(findCurrentPairs(currentPairArray8, 5, outputArray) == 1);
+    assert(outputArray[0].lower_limit == 4);
+    assert(outputArray[0].upper_limit == 8);
+    assert(outputArray[0].count == 5);
+
+    int currentPairArray9[7] = {7, 8, 3, 12, 2, 9, 11};
+    assert(findCurrentPairs(currentPairArray9, 7, outputArray) == 3);
+    assert(outputArray[0].lower_limit == 2);
+    assert(outputArray[0].upper_limit == 3);
+    assert(outputArray[0].count == 2);
+    assert(outputArray[1].lower_limit == 7);
+    assert(outputArray[1].upper_limit == 9);
+    assert(outputArray[1].count == 3);
+    assert(outputArray[2].lower_limit == 11);
+    assert(outputArray[2].upper_limit == 12);
+    assert(outputArray[2].count == 2);
+
     return 0;
 }
