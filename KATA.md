@@ -1,6 +1,7 @@
 Assumptions:- 
 	a) When the length of input is 1, then the output shall be empty [].
     b) When the values are discontinous, nearest range shall be taken into account.
+    c) Maximum possible pairs is limited to 100
 
 1) Get input array with length 0 and 1 and generate empty output
     
