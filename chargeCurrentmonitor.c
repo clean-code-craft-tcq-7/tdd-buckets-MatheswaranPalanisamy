@@ -41,10 +41,10 @@ static int getValidCurrentPairs(int *chrgeCurrentArray, int size, chargeCurrentP
         if(nextIndex > 0)
         {
             pairBuffer[pairCount].lower_limit = chrgeCurrentArray[index];
-            pairBuffer[pairCount].upper_limit = chrgeCurrentArray[nextIndex];
-            pairBuffer[pairCount].count = nextIndex - index + 1;
+            pairBuffer[pairCount].upper_limit = chrgeCurrentArray[index + nextIndex];
+            pairBuffer[pairCount].count = nextIndex + 1;
 
-            index = nextIndex + 1;
+            index += nextIndex + 1;
             pairCount++;
         }
         else

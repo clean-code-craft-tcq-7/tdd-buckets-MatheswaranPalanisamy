@@ -20,7 +20,7 @@ int main()
     assert(outputArray[0].upper_limit == 5);
     assert(outputArray[0].count == 2);
 
-    int currentPairArray4[6] = {4,5,6,7,8,9};
+    int currentPairArray4[6] = {4, 5, 6, 7, 8, 9};
     assert(findCurrentPairs(currentPairArray4, 6, outputArray) == 1);
     assert(outputArray[0].lower_limit == 4);
     assert(outputArray[0].upper_limit == 9);
