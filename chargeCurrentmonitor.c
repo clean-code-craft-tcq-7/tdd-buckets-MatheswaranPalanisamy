@@ -26,12 +26,21 @@ static int validateCurrentSampleArray(int *chrgeCurrentArray, int size)
 static int identifyCurrentPair(int *chrgeCurrentArray, int size)
 {
     int index = 0;
+    int firstElement = chrgeCurrentArray[0];
+    int lastElement = chrgeCurrentArray[0];
     for(;index < size - 1; index++)
     {
-        if(chrgeCurrentArray[index + 1] != (chrgeCurrentArray[index] + 1))
+        if((chrgeCurrentArray[index + 1] - chrgeCurrentArray[index]) > 1)
         {
             break;
         }
+    }
+
+    lastElement = chrgeCurrentArray[index];
+
+    if(firstElement == lastElement)
+    {
+        return 0;
     }
 
     return index;
