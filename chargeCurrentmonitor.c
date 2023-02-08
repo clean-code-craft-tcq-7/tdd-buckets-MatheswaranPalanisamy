@@ -5,7 +5,6 @@ static int validateCurrentSampleArray(int *chrgeCurrentArray, int size)
 {
     if(size < 2)
     {
-        printf("size %d\n", size);
         return 0;
     }
 
