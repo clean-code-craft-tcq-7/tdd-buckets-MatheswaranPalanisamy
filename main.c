@@ -1,20 +1,16 @@
 #include <stdio.h>
-#include <string.h>
+#include <assert.h>
 
 #include "chargeCurrentmonitor.h"
-#include "test_chargeCurrentmonitor.h"
 
 int main()
 {
-    // Simple values
-    int currentSamples1[] = {4,5};
-    testCurrentMonitor(currentSamples1, 2, "Range, Readings\n4-5, 2\n", 23);
-    // Misaligned simple values
-    int currentSamples2[] = {5,4};
-    testCurrentMonitor(currentSamples2, 2, "Range, Readings\n4-5, 2\n", 23);
-    // Simple 3 values
-    int currentSamples3[] = {2,3,4};
-    testCurrentMonitor(currentSamples3, 3, "Range, Readings\n2-4, 3\n", 23);
+    chargeCurrentPair outputArray[20];
+    assert(findCurrentPairs(NULL, 5, outputArray) == 0);
+    int currentPairArray1[1];
+    assert(findCurrentPairs(currentPairArray1, 0, outputArray) == 0);
+    int currentPairArray2[1] = {3};
+    assert(findCurrentPairs(currentPairArray2, 1, outputArray) == 0);
 
     return 0;
 }
