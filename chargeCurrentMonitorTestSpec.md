@@ -69,7 +69,7 @@
         b) Method will return 0, if 0 is passed as sample
         c) Method will return 0, if 100 is passed as sample
         d) Method will return 1, if 210 is passed as sample
-        e) Method will return 4, if 2000 is passed as sample
+        e) Method will return 4, if 1800 is passed as sample
         f) Method will return 4, if 2047 is passed as sample
         g) Method will return 10, if 2000 is passed as sample
         h) Method will return -1, if 4095 is passed as sample
