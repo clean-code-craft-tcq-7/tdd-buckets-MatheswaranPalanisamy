@@ -1,7 +1,6 @@
 ## Assumptions
 	a) When the length of input is 1, then the output shall be empty [].
-    b) When the values are discontinous, nearest range shall be taken into account.
-    c) Maximum possible pairs is limited to 100
+    b) Maximum possible pairs is limited to 100
 
 ### TDD steps
 #### Step 1: Get input array with length 0 and 1 and generate empty output
@@ -75,7 +74,7 @@
         h) Method will return -1, if 4095 is passed as sample
 
 #### Step 9: Convert the A2D samples to charge current
-    int ConvertA2DSamplestoCurrent(unsigned int *inputsample, int sampleSize, unsigned int *outputsample)
+    int ConvertA2DSamplestoCurrent(int *inputsample, int sampleSize, int *outputsample)
 
     The method will take the list of samples from 12bit A2D converter, validate them against valid range, ignores invalid samples and convert the valid samples to current values
 	    a) The 12bit integer value has limits from 0 - 4094.
