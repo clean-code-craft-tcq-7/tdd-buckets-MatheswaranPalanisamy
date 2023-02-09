@@ -43,9 +43,47 @@
         d) method shall return count as 3 and [[2, 3, 3], [7, 9, 7], [11, 12, 2]] in pairBuffer if [7, 8, 3, 12, 2, 9, 11, 2, 7, 9, 7, 9] is passed as input.
 
 #### Step 6: Generate output in csv format for passed array
-    Note: Refactoring is required in method int findCurrentPairs(int *chrgeCurrentArray, int size, char *pairBuffer)
-	
+    Note: New methods int formatCurrentPairInCsv(chargeCurrentPair *pairBuffer, int pairCount, char *formattedBuffer) and int getFormattedCurrentPairs(int *chrgeCurrentArray, int size, char *formattedBuffer) are required
+
 	The method an array of values, find best possible ranges and number of readings and shall return the csv formatted string.
         a) method will return "Range, Readings\n4-5, 2\n", if [4, 5] is passed as input.
         b) method will return "Range, Readings\n4-5, 2\n7-8, 2\n", if [4, 5, 7, 8] is passed as input.
         d) method shall return "Range, Readings\n3-11, 8\n11-13, 2\n" if [6, 3, 4, 5, 7, 9, 8, 11] is passed as input.
+
+
+### Extensions
+#### Step 7: Validate a A2D sample to be in range between 0 to 4095
+    int validateA2DSample(int sample)
+    
+    The method will get A2D sample and validate it to be within range 0 to 4094
+        a) Method will return 0, if -1 is passed as sample.
+        b) Method will return 1, if 0 is passed as sample.
+        c) Method will return 1, if 4094 is passed as sample.
+        d) Method will return 1, if 4095 is passed as sample.
+
+#### Step 8: Write a pure function to validate range and convert the A2D samples to current in terms of integer
+    int convertA2DSample(int sample)
+    
+    The method shall validate the sample with 0 - 4094 range and convert A2D sample to current as 0-4094 = 0-10 in linear basis and round it off to nearest integer
+        b) Method will return -1, if -5 is passed as sample
+        b) Method will return 0, if 0 is passed as sample
+        c) Method will return 0, if 100 is passed as sample
+        d) Method will return 1, if 210 is passed as sample
+        e) Method will return 4, if 2000 is passed as sample
+        f) Method will return 4, if 2047 is passed as sample
+        g) Method will return 10, if 2000 is passed as sample
+        h) Method will return -1, if 4095 is passed as sample
+
+#### Step 9: Convert the A2D samples to charge current
+    int ConvertA2DSamplestoCurrent(unsigned int *inputsample, int sampleSize, unsigned int *outputsample)
+
+    The method will take the list of samples from 12bit A2D converter, validate them against valid range, ignores invalid samples and convert the valid samples to current values
+	    a) The 12bit integer value has limits from 0 - 4094.
+	    b) Any value above 4094 will be ignored in the output current value array.
+        c) Round off the value to nearest integer
+
+#### Step 10: Integrate the A2D converted samples with current range formatter:
+    int getFormattedCurrentPairsFromADCSamples(unsigned int *inputsample, int sampleSize, char *formattedBuffer)
+
+	a) Get input as A2D samples array in integer range from 0 to 4095 and convert the samples to current.
+	b) Find the current range and count and return csv formatted current pairs.
