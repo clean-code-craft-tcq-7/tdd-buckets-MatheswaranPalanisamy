@@ -84,5 +84,12 @@
 #### Step 10: Integrate the A2D converted samples with current range formatter:
     int getFormattedCurrentPairsFromADCSamples(unsigned int *inputsample, int sampleSize, char *formattedBuffer)
 
-	a) Get input as A2D samples array in integer range from 0 to 4095 and convert the samples to current.
-	b) Find the current range and count and return csv formatted current pairs.
+        a) Get input as A2D samples array in integer range from 0 to 4095 and convert the samples to current.
+        b) Find the current range and count and return csv formatted current pairs.
+
+#### Step 11: Support another type of sensor which has sample range from 0 to 1022, current range from -15 to +15 Amps
+    Note: Refactor the methods to get sensor type, configure sensor dependent information to calculate the current as such.
+        Refactoring is required in existing test case level also.
+
+        a) Get input as per the supported range for sensor type 1 and get the formatted current value pair
+        b) Get input as per the supported range for sensor type 2 and get the formatted current value pair
