@@ -26,3 +26,19 @@ int convertA2DSample(int sample)
 
     return current;
 }
+
+int ConvertA2DSamplesToCurrent(int *inputsample, int sampleSize, int *outputsample)
+{
+    int outputCount = 0, index = 0, sampleOutput = 0;
+    for(;index < sampleSize; index++)
+    {
+        sampleOutput = convertA2DSample(inputsample[index]);
+        if(sampleOutput >= 0)
+        {
+            outputsample[outputCount] = sampleOutput;
+            outputCount++;
+        }
+    }
+
+    return outputCount;
+}

@@ -5,3 +5,5 @@
 
 int validateA2DSample(int sample);
 int convertA2DSample(int sample);
+int ConvertA2DSamplesToCurrent(int *inputsample, int sampleSize, int *outputsample);
+
